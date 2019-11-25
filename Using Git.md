@@ -1,14 +1,3 @@
----
-title: "Using Github"
-author: "BooteCG"
-date: "25/11/2019"
-output: html_document
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 # **Notes from Cesar's talk on Github**
 
 ## Setting up a git folder on your local comp

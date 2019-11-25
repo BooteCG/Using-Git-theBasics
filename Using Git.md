@@ -15,6 +15,7 @@ git init #initialise git
 Response will be something like:
 
 ```Initialized empty Git repository in /Users/#####/Documents/our_amazing_project/.git/``` 
+
 Basically, where all the magic happens.
 
 ### Check your git status

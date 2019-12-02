@@ -3,6 +3,9 @@
 ## Setting up a git folder on your local comp
 
 Below is a chunk of bash code (do in terminal) you can use to setup your own directory to work from:
+
+> Please observe some bash command in the following code will work fine in operating systems based on UNIX (i.e. Linux and MacOS) but not in Windows OS. If you are working in Windows you can use a shell container (e.g. Cygwin or Windows 10 Linux Bash shell). Alternatively, you can use equivalent commands (e.g. instead of ```ls``` use ```dir```).
+
 ```{bash, echo=TRUE, eval = FALSE}
 ls #list the files present
 cd Documents #change directory
@@ -57,6 +60,9 @@ RESPONSE:
 	
 	
 Finally, to commit it with a message (*-m*):
+
+> Use the imperative mood for writing your commit messages. Commit messages describe not only what have changed, but more importantly these describe the reasons of the changes and the context. Please observe that using the flag ```-m``` only will allow you to write a subject line. If you need to write a more detailed commit message use ```git commit```, this will prompt an editor window where you can add a subject line and additional text.
+
 ```{bash,  echo = TRUE, eval = FALSE}
 git commit -m "create file, and write project description" # -m is for message w/ commit
 ```
@@ -84,6 +90,8 @@ RESPONSE:
 
 
 ### Edit file:
+
+> Windows OS users can use ```notepad intro.md``` instead of ```open -e intro.md```
 ```{bash,  echo = TRUE, eval = FALSE}
 open -e intro.md
 # add a new sentence to file
@@ -103,6 +111,9 @@ git commit -m "list of peeps"
 ```
 
 ### New directory for data
+
+> Windows users can use ```type nul > sensible_data.md``` instead of ```touch sensible_data.md```
+
 ```{bash,  echo = TRUE, eval = FALSE}
 mkdir data
 cd data
@@ -120,22 +131,9 @@ git log
 
 'ls -ls' see all files and permissions
 
-### Other tidbits:
-
-```{bash,  echo = TRUE, eval = FALSE}
-git checkout head # see begining work
-git checkout master # where you're at now
-```
-
 ## PUBLISH TO GIT:
 
-- Go to git hub page
-- Click '+ new' or, 'add repository'
-- Fill in deets
-- Don't tick/click bottom box (readme and gitignore)
-- Click next
-
-A README file is needed so create one:
+GitHub will expect a ```README.md``` file, so create one:
 
 ```{bash,  echo = TRUE, eval = FALSE}
 touch README.md #create
@@ -145,25 +143,30 @@ git add README.md #add
 git commit -m "readme uploaded" #commit
 ```
 
+- Go to git hub page
+- Click '+ new' or, 'add repository'
+- Fill in deets
+- GitHub will ask you if you want to create ```README.md``` and ```.gitignore``` files in your new repo. You have already created these files, so don't create these.
+- Click next
+
+
+
 ### Connect to git repository through local comp:
-**Think this part is incorrect, Cesar can you edit please?**
+
+> You will get the link for your new repository in GitHub, copy and paste it after ```git remote add origin ```
+
 ```{bash, eval= FALSE, echo = TRUE}
- git remote add origin git@github.com:#####/our_amazing_project.git # insert your name
+ git remote add origin git@github.com:#####/our_amazing_project.git # replace this with your own link
  git remote -v
- git push origin -master 
+ git push origin master # Push your local repo to your new remote GitHub repo
 ``` 
  
 ### Clone someones repository
+
+> Before cloning a new repo be sure you are not inside an existing git project. ```git clone``` will create a new folder.
 ```{bash,  echo = TRUE, eval = FALSE}
  cd ..
  git clone https://github.com/CexyNature/our_amazing_project.git # copy from 'clone' tab on repository
 ```
  
- 
-```{bash,  echo = TRUE, eval = FALSE}
- git push # push to repository, if you don't have permission then you can do
- git fetch # compare what is on m local machine and what is on my github
-```
- 
-
  
